@@ -1,11 +1,13 @@
 package com.hrms.testscripts;
 
+import org.testng.annotations.Test;
+
 import com.hrms.lib.General;
 
-public class Jse {
-
-	public static void main(String[] args) throws Exception {
-		// TODO Auto-generated method stub
+public class Tng_Jse {
+	
+	@Test
+	public void tng() throws Exception {
 		
 		General g = new General();
 		
@@ -14,7 +16,7 @@ public class Jse {
 		g.jse_login();
 		g.jse_logout();
 		g.closeApplication();
-
+		
 	}
 
 }

@@ -2,18 +2,24 @@ package com.hrms.testscripts;
 
 import com.hrms.lib.General;
 
-public class Jse {
+public class Mouseover_Addemp {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		
-		General g = new General();
+General g = new General();
 		
 		g.openApplication();
-		g.login();
-		g.jse_login();
-		g.jse_logout();
+		g.login();			
+		g.pim();
+		g.addemp();
+		g.openframe();
+		g.emp_details();
+		g.closeframe();
+		g.logout();
 		g.closeApplication();
+		
+
 
 	}
 

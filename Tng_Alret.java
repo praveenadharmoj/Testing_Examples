@@ -1,14 +1,15 @@
 package com.hrms.testscripts;
 
+import org.testng.annotations.Test;
+
 import com.hrms.lib.General;
 
-public class Alert_Exp {
-
-	public static void main(String[] args) throws Exception {
-		// TODO Auto-generated method stub
-		
+public class Tng_Alret {
+	
+	@Test
+	public void tng() throws Exception {
 		General g = new General();
-		
+
 		g.openApplication();
 		g.pop_login();
 		g.popup();
@@ -17,7 +18,6 @@ public class Alert_Exp {
 		g.logout();
 		g.closeApplication();
 		
-
 	}
 
 }

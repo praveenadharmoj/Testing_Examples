@@ -1,47 +1,26 @@
-package selenium_Programs;
+package com.hrms.testscripts;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
+import com.hrms.lib.General;
 
 public class FileUpload {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
+				
+		General g = new General();
 		
-		WebDriver driver = new ChromeDriver();
-		driver.navigate().to("https://ctcorphyd.com/SureshIT/login.php");
-		
-		driver.findElement(By.name("txtUserName")).sendKeys("sureshit");
-		driver.findElement(By.name("txtPassword")).sendKeys("sureshit");
-		driver.findElement(By.name("Submit")).click();
-		System.out.println("Login Successfully");
-		
-		// PIM
-		Actions ac= new Actions(driver);
-		ac.moveToElement(driver.findElement(By.xpath("//span[text()='PIM']"))).perform();
-		System.out.println("Clicked on PIM");
-		Thread.sleep(1000);
-		//ADD EMPLOYEE
-		driver.findElement(By.xpath("//span[text()='Add Employee']")).click();
-		System.out.println("Clicked on Add Employee");	
-		//frame
-		driver.switchTo().frame("rightMenu");
-		driver.findElement(By.xpath("//input[@type='button'][@value='Add']")).click();
-		System.out.println("Clicked on Add Button");
-		
-		// FIRST NAME & LAST NAME
-		driver.findElement(By.name("txtEmpLastName")).sendKeys("Chary");
-		driver.findElement(By.xpath("//input[text='txtEmpFirstName']")).sendKeys("kavya");
-		
-		WebElement fileupload = driver.findElement(By.name("photofile"));
-		fileupload.sendKeys("\"C:\\Users\\hi\\OneDrive\\Desktop\\barbie.jfif\"");
-		System.out.println("Image uploaded");
-		
-		driver.findElement(By.xpath("//input=[@titlt='Save']")).click();
-		
+		g.openApplication();
+		g.login();			
+		g.pim();
+		g.addemp();
+		g.openframe();
+		g.emp_details();
+		g.emp_img();
+		g.save_button();
+		g.closeframe();
+		g.logout();
+		g.closeApplication();
+	
 
 	}
 

@@ -1,25 +1,26 @@
 package com.hrms.testscripts;
 
+import org.testng.annotations.Test;
+
 import com.hrms.lib.General;
 
-public class Frames {
+public class Tng_Mouseover {
 	
-	public static void main(String[] args) throws Exception {
-		// TODO Auto-generated method stub
-				
+	@Test
+	public void tng() throws Exception {
+		
 		General g = new General();
 		
 		g.openApplication();
 		g.login();			
+		g.pim();
+		g.addemp();
 		g.openframe();
-		g.searchby();
-		g.searchfor();
-		g.search_button();
-		g.checkbox();
-		g.delete_button();
+		g.emp_details();
 		g.closeframe();
 		g.logout();
 		g.closeApplication();
 		
 	}
+
 }
